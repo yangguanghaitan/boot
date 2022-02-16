@@ -1,0 +1,11 @@
+spring:
+  web:
+    resources:
+      cache:
+        period: 666
+      add-mappings: true
+
+#  mvc:
+#    hiddenmethod:
+#      filter:
+#        enabled: false
