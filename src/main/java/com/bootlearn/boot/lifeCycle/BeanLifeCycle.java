@@ -2,18 +2,23 @@ package com.bootlearn.boot.lifeCycle;
 
 
 import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
+import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  * @author d
  * @date 2022/2/16 10:52
  * @Describe   spring bean的生命周期
- *             {@link BeanFactoryPostProcessor}:插手bean工厂的容器启动最后阶段,当有多个时，实现
- *             {@link org.springframework.core.Ordered},指定bean工厂后置处理器的执行顺序，常用
- *             的实现类 {@link org.springframework.context.support.PropertySourcesPlaceholderConfigurer}和
+ *             1，{@link BeanFactoryPostProcessor}:插手bean工厂的容器启动最后阶段,当有多个时，实现
+ *             {@link org.springframework.core.Ordered},指定bean工厂后置处理器的执行顺序，
+ *
+ *             常用的实现类 {@link org.springframework.context.support.PropertySourcesPlaceholderConfigurer}和
  *             {@link org.springframework.beans.factory.config.PropertyOverrideConfigurer}和
  *             {@link org.springframework.beans.factory.config.CustomEditorConfigurer};
+ *
+ *             2，
  *
  **/
 public class BeanLifeCycle {
