@@ -4,8 +4,9 @@ spring:
       cache:
         period: 666
       add-mappings: true
-
 #  mvc:
 #    hiddenmethod:
 #      filter:
 #        enabled: false
+server:
+  port: 8088
