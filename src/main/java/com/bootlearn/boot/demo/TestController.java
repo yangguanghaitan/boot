@@ -3,13 +3,11 @@ package com.bootlearn.boot.demo;
 
 import com.ddcb.HelloService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Enumeration;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 @Controller
 public class TestController {
@@ -27,8 +25,18 @@ public class TestController {
 
     @GetMapping("/sayHello")
     @ResponseBody
-    public void sayHello() {
-        System.out.println(helloService.sayHello("tom"));
+    public String sayHello() {
+        return helloService.sayHello("tom");
     }
 
+    //测试表单提交
+    @RequestMapping(value = "/user/saveUser", method = RequestMethod.POST)
+    public String saveUser(String name, String age, HttpServletRequest request, HttpServletResponse response) throws Exception {
+        try {
+            System.out.println(name + "===" + age);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "redirect:/sayHello";
+    }
 }
