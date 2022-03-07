@@ -4,6 +4,10 @@ spring:
       cache:
         period: 666
       add-mappings: true
+  mvc:
+    view:
+      prefix: /
+      suffix: .html
 #  mvc:
 #    hiddenmethod:
 #      filter:
