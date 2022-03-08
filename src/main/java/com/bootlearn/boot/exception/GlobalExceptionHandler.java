@@ -10,10 +10,13 @@ import org.slf4j.LoggerFactory;
 import org.springframework.validation.BindException;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author d
@@ -106,4 +109,19 @@ public class GlobalExceptionHandler {
     public AjaxResult demoModeException(DemoModeException e) {
         return AjaxResult.error("演示模式，不允许操作");
     }
+
+    /**
+     * @author d
+     * @date 2022/3/8 22:47
+     * @Describe 全局数据
+     * @return java.util.Map<java.lang.String,java.lang.Object>
+     **/
+    @ModelAttribute(name = "md")
+    public Map<String,Object> getGlobalData(){
+        HashMap<String, Object> map = new HashMap<>();
+        map.put("age", 99);
+        map.put("gender", "男");
+        return map;
+    }
+
 }
