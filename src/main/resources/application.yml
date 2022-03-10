@@ -12,6 +12,9 @@ spring:
     mode: html
     cache: false
     encoding: utf-8
+  devtools:
+    restart:
+      enabled: true
 #  mvc:
 #    hiddenmethod:
 #      filter:
