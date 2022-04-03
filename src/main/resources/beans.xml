@@ -20,4 +20,9 @@
           destroy-method="myDestory" scope="prototype" p:name="张三" p:address="广州"
           p:phone="15900000000"  />
 
+    <bean id="dog" class="com.bootlearn.boot.lifeCycle.Dog" init-method="myInit"
+          destroy-method="myDestory" scope="prototype"  p:age="10" p:color="red">
+        <property name="sex" value="female"></property>
+    </bean>
+
 </beans>

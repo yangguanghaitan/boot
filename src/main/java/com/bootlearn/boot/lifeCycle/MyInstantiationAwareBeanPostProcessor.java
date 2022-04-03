@@ -12,7 +12,7 @@ public class MyInstantiationAwareBeanPostProcessor extends
 
     public MyInstantiationAwareBeanPostProcessor() {
         super();
-//        System.out.println("这是InstantiationAwareBeanPostProcessorAdapter实现类构造器！！");
+        System.out.println("这是InstantiationAwareBeanPostProcessorAdapter实现类构造器！！");
     }
 
     // 接口方法、实例化 Bean之前调用
