@@ -1,4 +1,4 @@
-package com.bootlearn.boot.annotation;
+package com.bootlearn.boot.annotation.one;
 
 import org.springframework.context.annotation.Condition;
 import org.springframework.context.annotation.ConditionContext;

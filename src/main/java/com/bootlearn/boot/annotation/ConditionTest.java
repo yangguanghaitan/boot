@@ -1,5 +1,6 @@
 package com.bootlearn.boot.annotation;
 
+import com.bootlearn.boot.annotation.one.AppConfig;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**

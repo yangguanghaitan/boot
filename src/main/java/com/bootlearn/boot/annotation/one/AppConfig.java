@@ -1,8 +1,10 @@
-package com.bootlearn.boot.annotation;
+package com.bootlearn.boot.annotation.one;
 
-import com.bootlearn.boot.annotation.domain.Parent;
-import com.bootlearn.boot.annotation.domain.Student;
-import com.bootlearn.boot.annotation.domain.Teacher;
+import com.bootlearn.boot.annotation.one.OsxCondition;
+import com.bootlearn.boot.annotation.one.WindowsCondition;
+import com.bootlearn.boot.annotation.one.domain.Parent;
+import com.bootlearn.boot.annotation.one.domain.Student;
+import com.bootlearn.boot.annotation.one.domain.Teacher;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Conditional;
 import org.springframework.context.annotation.Configuration;

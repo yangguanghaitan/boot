@@ -1,4 +1,4 @@
-package com.bootlearn.boot.annotation.domain;
+package com.bootlearn.boot.annotation.one.domain;
 
 /**
  * @Auther d
