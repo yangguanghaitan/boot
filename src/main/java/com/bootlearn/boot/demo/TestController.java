@@ -3,6 +3,7 @@ package com.bootlearn.boot.demo;
 
 import com.ddcb.HelloService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,11 +13,13 @@ import javax.servlet.http.HttpServletResponse;
 @Controller
 public class TestController {
 
+    @Value("${person.name:Hello World}")
+    private String message = "Hello World";
 
     @GetMapping("/article/{id}")
     public @ResponseBody
     String getArticle(@PathVariable Long id) {
-        return "你好"+id;
+        return "你好"+id+message;
     }
 
     //     测试手写starter
