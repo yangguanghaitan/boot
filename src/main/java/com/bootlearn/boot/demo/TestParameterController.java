@@ -67,8 +67,14 @@ public class TestParameterController {
      **/
     @RequestMapping(value = "/pathVariable/{name}/{id1}/{age}", method = RequestMethod.GET)
     @ResponseBody
-    public String sayHello(@PathVariable("id1") Integer id, @PathVariable("name") String name, @PathVariable("age")int age) {
+    public String testPathVariable(@PathVariable("id1") Integer id, @PathVariable("name") String name, @PathVariable("age")int age) {
         return "id:" + id + " name:" + name+" age:"+age;
     }
 
+
+    @RequestMapping(value = "/RequestParam", method = RequestMethod.GET)
+    @ResponseBody
+    public String testRequestParam(@RequestParam("id1") Integer id, @RequestParam("name1") String name, int age) {
+        return "id:" + id + " name:" + name+" age:"+age;
+    }
 }
