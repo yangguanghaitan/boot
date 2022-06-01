@@ -1,5 +1,6 @@
 package com.bootlearn.boot.demo;
 
+import com.bootlearn.boot.domain.DataVo;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.stereotype.Controller;
@@ -28,5 +29,12 @@ public class TestParameterController {
         ObjectMapper mapper=new ObjectMapper();
         Integer[] integers = mapper.readValue(iddds, Integer[].class);
         return integers;
+    }
+
+    @RequestMapping(value = "/jsonStr",method = RequestMethod.POST)
+    @ResponseBody
+    public String testJSonStr(@RequestBody DataVo dataVo) {
+
+        return dataVo.getConfigCode()+"="+dataVo.getConfigGroupId()+"="+dataVo.getConfigName();
     }
 }
