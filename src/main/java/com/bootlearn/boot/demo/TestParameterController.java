@@ -4,10 +4,7 @@ import com.bootlearn.boot.domain.DataVo;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @Auther d
@@ -38,7 +35,7 @@ public class TestParameterController {
      **/
     @RequestMapping(value = "/jsonStr", method = RequestMethod.POST)
     @ResponseBody
-    public String testJSonStr(DataVo dataVo) {
+    public String testJSonStr(@RequestBody DataVo dataVo) {
 
         return dataVo.getConfigCode() + "=" + dataVo.getConfigGroupId() + "=" + dataVo.getConfigName();
     }
@@ -50,12 +47,28 @@ public class TestParameterController {
      * @return java.lang.String
      * @author d
      * @date 2022/6/1 9:32
-     * @Description 用单个字段接受json参数
+     * @Description 用单个字段接受json参数，只能有一个@RequestBody，多了报错,所以下面例子会报错
      **/
     @RequestMapping(value = "/jsonStr2", method = RequestMethod.POST)
     @ResponseBody
-    public String testJSonStr(@RequestBody String configName,  int configGroupId, String configCode) {
+    public String testJSonStr(@RequestBody String configName, int configGroupId, String configCode) {
 
         return configName + "=" + configGroupId + "=" + configCode;
     }
+
+    /**
+     * @param id
+     * @param name
+     * @param age
+     * @return java.lang.String
+     * @author d
+     * @date 2022/6/1 10:11
+     * @Description 路径变量
+     **/
+    @RequestMapping(value = "/pathVariable/{name}/{id1}/{age}", method = RequestMethod.GET)
+    @ResponseBody
+    public String sayHello(@PathVariable("id1") Integer id, @PathVariable("name") String name, @PathVariable("age")int age) {
+        return "id:" + id + " name:" + name+" age:"+age;
+    }
+
 }
