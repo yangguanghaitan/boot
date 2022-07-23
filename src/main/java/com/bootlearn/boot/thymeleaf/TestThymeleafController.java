@@ -16,7 +16,7 @@ public class TestThymeleafController {
 
     @GetMapping("/thyme")
     public String getThymeleaf(Long id,Map map) {
-        map.put("aa","dddd");
+        map.put("aa","123");
         return "thyme";
     }
 }

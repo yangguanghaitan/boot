@@ -30,6 +30,10 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
 
@@ -127,12 +131,12 @@
             <version>2.4.3</version>
         </dependency>
 <!--        spring-boot-devtools实现热部署-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <version>2.4.3</version>
-            <optional>true</optional>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-devtools</artifactId>-->
+<!--            <version>2.4.3</version>-->
+<!--            <optional>true</optional>-->
+<!--        </dependency>-->
 <!--        properties文件自动提示内容-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -152,7 +156,6 @@
                             <!--   打包时去除properties文件提示功能-->
                             <groupId>org.springframework.boot</groupId>
                             <artifactId>spring-boot-configuration-processor</artifactId>
-                            <optional>true</optional>
                         </exclude>
                     </excludes>
                 </configuration>

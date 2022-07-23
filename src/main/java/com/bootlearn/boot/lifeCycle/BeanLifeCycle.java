@@ -55,9 +55,9 @@ public class BeanLifeCycle {
         System.out.println("现在开始关闭容器！");
         ((ClassPathXmlApplicationContext)factory).registerShutdownHook();
 
-//        ResourcePatternResolver resourceResolver = new PathMatchingResourcePatternResolver();
-//        Resource fileResource = resourceResolver.getResource("D:/spring21site/README");
-//        assertTrue(fileResource instanceof ClassPathResource);
-//        assertFalse(fileResource.exists());
+        ResourcePatternResolver resourceResolver = new PathMatchingResourcePatternResolver();
+        Resource fileResource = resourceResolver.getResource("D:/spring21site/README");
+        assertTrue(fileResource instanceof ClassPathResource);
+        assertFalse(fileResource.exists());
     }
 }

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 
+@DisplayName("测试类")
 @SpringBootTest
 class BootApplicationTests {
 
@@ -49,6 +50,11 @@ class BootApplicationTests {
     @Test
     public void test002(){
         System.out.println(222);
+    }
+    @DisplayName("出异常了")
+    @Test
+    public void test003(){
+        throw new RuntimeException("异常");
     }
 
 }
